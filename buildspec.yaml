@@ -15,7 +15,7 @@ phases:
   post_build:
     commands:
       - echo Build completed on `date`
-      - sam package --s3-bucket perry-code-build ---template-file template.yaml --output-template-file outputSam.yaml
+      - sam package --s3-bucket perry-code-build --template-file template.yaml --output-template-file outputSam.yaml
       - ls -la notification/build/libs
 artifacts:
   files:
