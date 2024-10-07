@@ -1,0 +1,31 @@
+AWSTemplateFormatVersion: '2010-09-09'
+Transform: AWS::Serverless-2016-10-31
+
+Description: >
+  Sam upload notification function
+
+Resources:
+  NotificationRunner:
+    Type: AWS::Serverless::Function # More info about Function Resource: https://github.com/awslabs/serverless-application-model/blob/master/versions/2016-10-31.md#awsserverlessfunction
+    Properties:
+      AutoPublishAlias: actualNotificationRunner
+      CodeUri: notification
+      Handler: by.halapsikon.notification.NotificationRunner::handleRequest
+      Runtime: java17
+      Architectures:
+        - x86_64
+      Timeout: 20
+      MemorySize: 512
+      Role: arn:aws:iam::590183803585:role/FullPowerLambdaRole
+      Environment: # More info about Env Vars: https://github.com/awslabs/serverless-application-model/blob/master/versions/2016-10-31.md#environment-object
+        Variables:
+          SNS_TOPIC_NAME: perry-UploadsNotificationTopic
+      Events:
+        SQSTrigger:
+          Type: SQS # More info about API Event Source: https://github.com/awslabs/serverless-application-model/blob/master/versions/2016-10-31.md#api
+          Properties:
+            Queue: arn:aws:sqs:eu-north-1:590183803585:perry-UploadsNotificationQueue
+            BatchSize: 10
+            Enabled: false
+      DeploymentPreference:
+        Type: Linear10PercentEvery1Minute

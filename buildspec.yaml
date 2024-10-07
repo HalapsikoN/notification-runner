@@ -1,0 +1,23 @@
+version: 0.2
+
+phases:
+  install:
+    runtime-versions:
+      java: corretto17
+  pre_build:
+    commands:
+      - echo Nothing to do in the pre_build phase...
+  build:
+    commands:
+      - echo Build started on `date`
+      - cd notification
+      - gradle build
+  post_build:
+    commands:
+      - echo Build completed on `date`
+      - sam package --s3-bucket perry-code-build --output-template-file outputSam.yaml
+      - ls -la notification/build/libs
+artifacts:
+  files:
+    - outputSam.yaml
+    - notification/build/libs/notification-v1.0.jar
