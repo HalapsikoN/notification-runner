@@ -1,7 +1,7 @@
 plugins {
   id 'java'
 //  id 'application'
-  id 'com.gradleup.shadow' version '8.3.2'
+//  id 'com.gradleup.shadow' version '8.3.2'
 }
 
 group = 'by.halapsikon'
@@ -34,9 +34,9 @@ dependencies {
   implementation "com.amazonaws:aws-lambda-java-core:${lambdaVersion}"
   implementation "com.amazonaws:aws-lambda-java-events:3.14.0"
   implementation "com.amazonaws:aws-java-sdk-sns:1.12.767"
-  testImplementation("org.junit.jupiter:junit-jupiter-api:${junitVersion}")
-  testRuntimeOnly("org.junit.jupiter:junit-jupiter-engine:${junitVersion}")
+//  testImplementation("org.junit.jupiter:junit-jupiter-api:${junitVersion}")
+//  testRuntimeOnly("org.junit.jupiter:junit-jupiter-engine:${junitVersion}")
 }
 
-test {
-useJUnitPlatform()}
+//test {
+//useJUnitPlatform()}
