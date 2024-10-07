@@ -24,7 +24,7 @@ Resources:
         SQSTrigger:
           Type: SQS # More info about API Event Source: https://github.com/awslabs/serverless-application-model/blob/master/versions/2016-10-31.md#api
           Properties:
-            Queue: arn:aws:sqs:eu-north-1:590183803585:perry-UploadsNotificationQueue
+            Queue: arn:aws:sqs:us-east-1:590183803585:perry-UploadsNotificationQueue
             BatchSize: 10
             Enabled: false
       DeploymentPreference:
