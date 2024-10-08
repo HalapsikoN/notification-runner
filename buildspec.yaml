@@ -19,10 +19,10 @@ phases:
     commands:
       - echo Build completed on `date`
       - cd ..
-      - sam package --s3-bucket perry-code-build --output-template-file outputSam.yml
-#      - sam package --template-file template.yml --output-template-file outputSam.yml
+      - sam package --s3-bucket perry-code-build --output-template-file outputSam.yaml
+#      - sam package --template-file template.yaml --output-template-file outputSam.yaml
       - ls -la
 artifacts:
   files:
-    - outputSam.yml
+    - outputSam.yaml
     - notification/build/libs/notification-v1.0-all.jar
