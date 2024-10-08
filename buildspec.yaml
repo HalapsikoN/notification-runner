@@ -20,7 +20,7 @@ phases:
       - cd ..
       - sam package --s3-bucket perry-code-build --output-template-file outputSam.yaml
 #      - sam package --template-file template.yaml --output-template-file outputSam.yaml
-      - ls -la notification/build/libs
+      - ls -la
 artifacts:
   files:
     - outputSam.yaml
