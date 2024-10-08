@@ -11,7 +11,9 @@ phases:
     commands:
       - echo Build started on `date`
       - cd notification
+      - gradle wrapper --gradle-version 8.5
       - gradle build
+      - gradle shadowJar
   post_build:
     commands:
       - echo Build completed on `date`
@@ -22,4 +24,4 @@ phases:
 artifacts:
   files:
     - outputSam.yaml
-    - notification/build/libs/notification-v1.0.jar
+    - notification/build/libs/notification-v1.0-all.jar
