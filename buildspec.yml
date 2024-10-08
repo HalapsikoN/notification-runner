@@ -12,17 +12,17 @@ phases:
       - echo Build started on `date`
       - cd notification
       - chmod +x ./gradlew
-      - ./gradlew wrapper --gradle-version 8.5
+#      - ./gradlew wrapper --gradle-version 8.5
       - ./gradlew build
       - ./gradlew shadowJar
   post_build:
     commands:
       - echo Build completed on `date`
       - cd ..
-      - sam package --s3-bucket perry-code-build --output-template-file outputSam.yaml
-#      - sam package --template-file template.yaml --output-template-file outputSam.yaml
+      - sam package --s3-bucket perry-code-build --output-template-file outputSam.yml
+#      - sam package --template-file template.yml --output-template-file outputSam.yml
       - ls -la
 artifacts:
   files:
-    - outputSam.yaml
+    - outputSam.yml
     - notification/build/libs/notification-v1.0-all.jar
