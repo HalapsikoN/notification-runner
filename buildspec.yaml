@@ -11,9 +11,9 @@ phases:
     commands:
       - echo Build started on `date`
       - cd notification
-      - gradle wrapper --gradle-version 8.5
-      - gradle build
-      - gradle shadowJar
+      - .\gradlew wrapper --gradle-version 8.5
+      - .\gradlew build
+      - .\gradlew shadowJar
   post_build:
     commands:
       - echo Build completed on `date`
