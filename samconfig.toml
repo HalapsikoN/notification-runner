@@ -17,9 +17,6 @@ lint = true
 capabilities = "CAPABILITY_IAM"
 confirm_changeset = true
 resolve_s3 = false
-s3_prefix = "notification-runner"
-region = "us-east-1"
-image_repositories = []
 
 [default.package.parameters]
 resolve_s3 = false
