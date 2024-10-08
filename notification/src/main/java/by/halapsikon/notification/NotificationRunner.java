@@ -15,7 +15,7 @@ import java.util.stream.Collectors;
 
 public class NotificationRunner implements RequestHandler<SQSEvent, String> {
 
-    private final static String EMAIL_HEADER = "New images were uploaded via SAM2!\n\nSee the next ones:\n";
+    private final static String EMAIL_HEADER = "New images were uploaded (lambda created from CodePipeline process)!\n\nSee the next ones:\n";
 
     @Override
     public String handleRequest(SQSEvent sqsEvent, Context context) {
