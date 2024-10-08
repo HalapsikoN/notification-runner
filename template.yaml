@@ -27,5 +27,5 @@ Resources:
             Queue: arn:aws:sqs:us-east-1:590183803585:perry-UploadsNotificationQueue
             BatchSize: 10
             Enabled: false
-      DeploymentPreference:
-        Type: Linear10PercentEvery1Minute
+#      DeploymentPreference:
+#        Type: Linear10PercentEvery1Minute
